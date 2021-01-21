@@ -1,0 +1,463 @@
+.App {
+  text-align: center;
+  font-family: cursive;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  font-weight: 600;
+  color: white;
+}
+
+.simple-trans-main > div {
+  cursor: pointer;
+  position: absolute;
+  width: 400px;
+  height: 610px;
+  top: 23px;
+  left: 35%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  will-change: transform, opacity;
+  text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+}
+
+@media only screen and (max-width: 600px) {
+  .simple-trans-main > div {
+    top: 0px;
+    left: 0px;
+    width: 370px;
+  }
+  .Gamebox {
+    width: 100%;
+  }
+}
+
+.Gamebox {
+  position:relative;
+  width: 400px;
+  height: 610px;
+  background-image: radial-gradient(circle, #0020C2, #2B3856);
+  border-radius: 10px;
+}
+
+.ScoreArea {
+  position: relative;
+  height: 75%;
+  padding: 15px 28px 15px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.ScoreBox-container {
+  display: inline-block;
+  text-align: justify;
+  width: 50%;
+  font-size: medium;
+}
+
+.ScoreBox {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 12px;
+  border-radius: 8px;
+  background-image: radial-gradient(circle, #ffff00, #ffa500 );
+  width: 35px;
+  height: 34px;
+  border: 3px solid #ffbf00;
+  color: #000;
+  word-wrap: break-word;
+}
+
+.block-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.red-badge {
+  display: inline-block;
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  font-size: 9px;
+  text-align: center;
+  background: #ff4d4f;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.rulesHeader {
+  position: fixed;
+  text-align: center;
+  background-image: radial-gradient(circle, #04145c, #111 );
+  opacity: 1;
+  width: 100%;
+  z-index: 999
+}
+
+.Score {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+}
+
+.locked-blocks {
+  background-image: radial-gradient(circle, #ffffff, #e2e2e2);
+  color: black;
+  cursor: text;
+  border: 3px solid white;
+}
+
+.PlayArea {
+  display: flex;
+  justify-content: center;
+}
+
+.Dice {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  padding: 2px;
+  margin: 0 10px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+.dice-unlocked {
+  border: 3px solid #202020;
+}
+
+.dice-locked {
+  border: 3px solid #9a9a00;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.button {
+  border-radius: 0.25rem;
+  border: none;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+.Roll-button {
+  background-color: #4299e1;
+  color: white;
+}
+
+.Score-button {
+  background-color: #fff;
+  color: black;
+}
+
+.button:hover{
+  background-color: #2b6cb0;
+  cursor: pointer;
+}
+
+.Score-button:hover{
+  background-color: #2b6cb0;
+  cursor: pointer;
+  color: white;
+}
+
+.button-disabled, .button-disabled:hover {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.button-full {
+  width: 80%;
+  margin: 10px 20px 0;
+}
+
+.button-half {
+  width: 40%;
+  margin: 10px 5px 0;
+}
+
+.final-score {
+  display: flex;
+  height: 68%;
+  background: radial-gradient(circle, #a9a9a9, #303030);
+  margin: 15px 40px;
+  border-radius: 8px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dot {
+   display: block;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: black;
+   margin: 2px;
+}
+
+.first-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+.second-face {
+  display: flex;
+  justify-content : space-between;
+  height: inherit;
+}
+
+.second-face .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.third-face {
+  display: flex;
+  justify-content: space-between;
+  height: inherit;
+}
+
+.third-face .dot:nth-of-type(1) {
+  align-self :flex-end;
+}
+
+.third-face .dot:nth-of-type(2) {
+  align-self :center;
+}
+
+
+.fourth-face , .sixth-face, .fifth-face{
+  display: flex;
+  justify-content: space-between;
+  height:inherit;
+}
+
+.fourth-face .column , .sixth-face .column, .fifth-face .column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fifth-face .column:nth-of-type(2) {
+  justify-content: center;
+}
+
+.hooks-main > svg {
+  display: none;
+}
+
+.hooks-main > div {
+  position: absolute;
+  will-change: transform;
+  border-radius: 50%;
+  background: #9599f0;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  opacity: 0.6;
+}
+
+.hooks-main > div:nth-child(1) {
+  width: 120px;
+  height: 120px;
+}
+
+.hooks-main > div:nth-child(2) {
+  width: 250px;
+  height: 250px;
+}
+
+.hooks-main > div:nth-child(3) {
+  width: 150px;
+  height: 150px;
+}
+
+.hooks-main > div::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.hooks-main > div:nth-child(2)::after {
+  top: 70px;
+  left: 70px;
+  width: 70px;
+  height: 70px;
+}
+
+.hooks-main > div:nth-child(3)::after {
+  top: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.hooks-main {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  filter: url('#goo');
+  overflow: hidden;
+}
+
+/* Parallax */
+.card1,
+.card2,
+.card3,
+.card4 {
+  position: absolute;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+.card1 {
+  min-width: 10ch;
+  min-height: 10ch;
+  width: 25ch;
+  height: 25ch;
+  top: 20px;
+  max-width: 50ch;
+  max-height: 50ch;
+  background-image: url(https://image.flaticon.com/icons/svg/119/119591.svg);
+  /* https://image.flaticon.com/icons/svg/119/119596.svg */
+}
+
+.card2 {
+  width: 5ch;
+  height: 5ch;
+  top: 260px;
+  background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg);
+}
+
+.card3 {
+  opacity: 0.9;
+  width: 6ch;
+  height: 6ch;
+  left: 320px;
+  top: 270px;
+  background-image: url(https://image.flaticon.com/icons/svg/789/789392.svg);
+}
+
+.card4 {
+  width: 8ch;
+  height: 8ch;
+  top: 15ch;
+  background-image: url(https://image.flaticon.com/icons/svg/1998/1998765.svg);
+  /* https://image.flaticon.com/icons/svg/789/789392.svg */
+}
+
+.container {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Devil */
+svg {
+  pointer-events: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  width: 300px;
+  max-width: 600px;
+  transform-origin: 0% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 10em;
+}
+
+#bg {
+  fill: #2da1dc;
+}
+#sweater > path:nth-child(1) {
+  fill: #da2a04;
+}
+#sweater > path:nth-child(2) {
+  fill: #711502;
+}
+#sweater > path:nth-child(3) {
+  fill: #711502;
+}
+
+#face > path:nth-child(1) {
+  fill: #87582a;
+}
+#face > path:nth-child(2) {
+  fill: #583a1c;
+}
+#eye > path:nth-child(2) {
+  fill: #f0f0f0;
+}
+#eye > g:first-of-type > path:nth-child(1) {
+  fill: #159e97;
+}
+#eye > g:first-of-type > path:nth-child(2) {
+  fill: #0f9390;
+}
+#eye > g:last-of-type > path:nth-child(2) {
+  fill: #231f20;
+}
+#mouth > path:nth-child(1) {
+  fill: #603a22;
+}
+#mouth > path:nth-child(2) {
+  fill: #b7092b;
+}
+#mouth > path:nth-child(3) {
+  fill: #a00026;
+}
+#mouth > path:nth-child(4) {
+  fill: #ffffff;
+}
+#hair > path:nth-of-type(1) {
+  fill: #0e0e0d;
+}
+#hair > path:nth-of-type(2) {
+  fill: #0e0e0d;
+}
+#hair > path:nth-of-type(3) {
+  fill: #0e0e0d;
+}
+.devilcontainer {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  text-align: justify;
+  top: 0;
+  left: 0;
+  cursor: auto;
+}
